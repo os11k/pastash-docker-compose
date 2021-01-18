@@ -1,0 +1,13 @@
+version: '3'
+services:
+  pastash:
+    container_name: pastash
+    build: ./
+    volumes:
+      - ./conf:/conf
+    logging:
+      options:
+        max-size: 50m
+    ports:
+      - "10514:10514/udp"
+    restart: always
